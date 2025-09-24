@@ -50,4 +50,15 @@
 |            | DD            | BIGINT           | Número de defesas difíceis realizadas (apenas goleiros).                    |
 |            | DP            | BIGINT           | Número de pênaltis defendidos (apenas goleiros).                            |
 |            | GS            | BIGINT           | Número de gols sofridos (apenas goleiros).                                  |
+| **Pontuacao** | abreviacao  | TEXT             | Abreviação do tipo de pontuação           |
+|               | nome        | TEXT             | Nome do tipo de pontuação                 |
+|               | pontuacao   | DOUBLE PRECISION | Valor do tipo de pontuação                |
+| **Posicao**   | id         | BIGINT (PK) | ID da posição         |
+|               | nome       | TEXT        | Nome da posição       |
+|               | abreviacao | TEXT        | Abreviação da posição |
+| **Status**    | id         | BIGINT (PK) | ID do status   |
+|               | nome       | TEXT        | Nome do status |
+
+
+
 
