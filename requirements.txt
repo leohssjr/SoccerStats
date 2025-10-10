@@ -2,3 +2,6 @@ pandas
 sqlalchemy
 python-dotenv
 psycopg2-binary
+matplotlib
+plotly
+dash
