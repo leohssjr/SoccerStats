@@ -94,4 +94,4 @@ Notas
 - `Scouts.posicao_id`: presente no dicionário, mas passível de remoção futura (informação já está em Atletas → Posicoes).
 - Tabelas `PONTUACAO` e `STATUS` são referenciais/apoio e não se relacionam diretamente às demais neste modelo conceitual.
 
-<font size="3"><p style="text-align: center"><b>Autores:</b>  <a href="https://github.com/leohssjr">Leonardo Sauma</a>, <a href="https://github.com/lramon2001">Lucas Ramon</a>. 2025</p></font>
+<font size="3"><p style="text-align: center"><b>Autores:</b>  <a href="https://github.com/leohssjr">Leonardo Sauma</a>, <a href="https://github.com/lramon2001">Lucas Ramon</a> e <a href="https://github.com/MatheusPerillo">Matheus Perillo</a>. 2025</p></font>
