@@ -22,6 +22,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      etl-job:
+        condition: service_completed_successfully  
     env_file:
       - ./.env
     environment:
@@ -31,9 +33,9 @@ services:
       - .:/app
     working_dir: /app/dataLayer/silver
     
-  notebook-job:
+  etl-job:
     build: .
-    container_name: notebook-job
+    container_name: etl-job
     depends_on:
       postgres:
         condition: service_healthy
@@ -49,6 +51,8 @@ services:
       - .:/app
 
     working_dir: /app/transformer/etl
+  
+
 
 volumes:
   pgdata:
