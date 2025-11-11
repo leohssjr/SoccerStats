@@ -17,12 +17,12 @@ services:
   analysis-job:
     build:
       context: .
-      dockerfile: Dockerfile.analysis   # 🔥 usa o novo Dockerfile
+      dockerfile: Dockerfile.analysis   
     container_name: analysis-job
     depends_on:
       postgres:
         condition: service_healthy
-      etl-job:
+      etl-job-silver-to-gold:
         condition: service_completed_successfully  
     env_file:
       - ./.env
@@ -33,12 +33,39 @@ services:
       - .:/app
     working_dir: /app/dataLayer/silver
     
-  etl-job:
-    build: .
-    container_name: etl-job
+  etl-job-raw-to-silver:
+    build: 
+      context: .
+      dockerfile: Dockerfile.silver 
+    container_name: etl-job-raw-to-silver
+    
     depends_on:
       postgres:
         condition: service_healthy
+
+    env_file:
+      - ./.env
+
+    environment:
+      DB_HOST: postgres
+      DB_PORT: "5432"  
+
+    volumes:
+      - .:/app
+
+    working_dir: /app/transformer/etl
+  
+  etl-job-silver-to-gold:
+    build: 
+      context: .
+      dockerfile: Dockerfile.gold 
+    container_name: etl-job-silver-to-gold
+    
+    depends_on:
+      postgres:
+        condition: service_healthy
+      etl-job-raw-to-silver:
+        condition: service_completed_successfully
 
     env_file:
       - ./.env

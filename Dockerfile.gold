@@ -10,5 +10,4 @@ COPY . .
 
 WORKDIR /app/transformer/etl
 
-CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "raw_to_silver.ipynb", "--output", "raw_to_silver_executado.ipynb"]
 CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "silver_to_gold.ipynb", "--output", "silver_to_gold_executado.ipynb"]
