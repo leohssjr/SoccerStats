@@ -10,4 +10,4 @@ COPY . .
 
 WORKDIR /app/dataLayer/silver
 
-CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "analysis_silver.ipynb", "--output", "analysis_silver_executado.ipynb"]
+CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "analytics.ipynb", "--output", "analytics.ipynb"]

@@ -8,7 +8,6 @@ RUN pip install --no-cache-dir jupyter nbconvert
 
 COPY . .
 
-WORKDIR /app/transformer
+WORKDIR /app/dataLayer/raw
 
-CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "etl_raw_to_silver.ipynb", "--output", "etl_raw_to_silver.ipynb"]
-
+CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "analytics.ipynb", "--output", "analytics.ipynb"]

@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir jupyter nbconvert
 
 COPY . .
 
-WORKDIR /app/transformer/etl
+WORKDIR /app/transformer
 
-CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "silver_to_gold.ipynb", "--output", "silver_to_gold_executado.ipynb"]
+CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "etl_silver_to_gold.ipynb", "--output", "etl_silver_to_gold.ipynb"]

@@ -2,6 +2,7 @@ pandas
 sqlalchemy
 python-dotenv
 psycopg2-binary
+jinja2
 matplotlib
 plotly
 dash
